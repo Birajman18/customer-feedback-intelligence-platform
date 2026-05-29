@@ -1124,7 +1124,6 @@ def render_theme_heatmap(df_exploded):
     st.plotly_chart(_apply_font(fig), use_container_width=True)
     st.caption("Darker blue cells = higher concentration of that sentiment for that theme.")
 
-
 def render_about_page():
     """Render the About & Methodology page."""
 
@@ -1132,14 +1131,11 @@ def render_about_page():
         '<div style="background:#f0f4ff; border-left:4px solid #1e3a5f; '
         'padding:18px 22px; border-radius:8px; margin-bottom:16px;">'
         '<p style="font-size:30px; font-weight:700; color:#000000; margin:0 0 8px 0;">'
-        'Project By Group 5</p>'
-        '<p style="font-size:28px; font-weight:600; color:#000000; margin:0 0 10px 0;">'
-        'Christian East &nbsp;·&nbsp; Birajman Tamang &nbsp;·&nbsp; Kelsang Yonjan</p>'
+        'Project By Birajman Tamang</p>'
         '<p style="font-size:27px; font-weight:700; color:#000000; margin:0 0 4px 0;">'
         'CSCI 491</p>'
         '<p style="font-size:27px; font-weight:600; color:#000000; margin:0;">'
-        'Special thanks to <strong>Dr. Jennifer Lavergne</strong> and '
-        '<strong>Dr. Lasang Tamang</strong></p>'
+        'Special thanks to <strong>Dr. Jennifer Lavergne</strong></p>'
         '</div>',
         unsafe_allow_html=True,
     )
@@ -1221,56 +1217,4 @@ def render_about_page():
         st.markdown('<p style="font-size:27px; color:#000000;"><strong>Dashboard</strong><br>Streamlit · Plotly · fpdf2 · pandas</p>', unsafe_allow_html=True)
 
     st.markdown("---")
-    st.markdown("### Contributions")
-
-    members = [
-        {
-            "name": "Christian East",
-            "role": "Student - Computer Science",
-            "contributions": [
-                "Researched and selected Ollama for local LLM usage",
-                "Designed system architecture flowchart",
-                "Built LLM pipeline with retry logic and prompt engineering",
-                'Developed "Generate LLM Analysis" feature in the dashboard',
-                "Implemented LLM hallucination prevention and batch processing",
-                "Created demo video",
-            ]
-        },
-        {
-            "name": "Birajman Tamang",
-            "role": "Student - Computer Science",
-            "contributions": [
-                "Researched and created predicted themes",
-                "Handled all data cleaning (duplicates, missing values, language filtering)",
-                "Developed ML model using Logistic Regression + TF-IDF",
-                "Wrote core pipeline integration code",
-                "Built mixed sentiment detection logic",
-            ]
-        },
-        {
-            "name": "Kelsang Yonjan",
-            "role": "Student - Computer Science",
-            "contributions": [
-                "Extracted Starbucks reviews from Yelp Open Dataset",
-                "Recommended and set up Streamlit + Plotly for the dashboard",
-                "Built text preprocessing pipeline",
-                "Evaluated Logistic Regression model",
-                "Designed and built the dashboard UI",
-            ]
-        },
-    ]
-
-    for member in members:
-        items = "".join([f'<li style="font-size:27px; color:#000000; margin-bottom:6px;">{c}</li>' for c in member["contributions"]])
-        st.markdown(
-            f'<div style="background:#f0f4ff; border-left:4px solid #1e3a5f; '
-            f'padding:16px 20px; border-radius:8px; margin-bottom:12px;">'
-            f'<p style="font-size:30px; font-weight:700; color:#1e3a5f; margin:0 0 4px 0;">{member["name"]}</p>'
-            f'<p style="font-size:20px; font-weight:500; color:#000000; margin:0 0 10px 0;">{member["role"]}</p>'
-            f'<ul style="margin:0; padding-left:20px;">{items}</ul>'
-            f'</div>',
-            unsafe_allow_html=True,
-        )
-
-    st.markdown("---")
-    st.markdown('<p style="font-size:25px; color:#000000;">Customer Feedback Intelligence Platform — CSCI 491 · Group 5</p>', unsafe_allow_html=True)
+    st.markdown('<p style="font-size:25px; color:#000000;">Customer Feedback Intelligence Platform — CSCI 491</p>', unsafe_allow_html=True)
